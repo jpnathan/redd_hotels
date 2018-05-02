@@ -1,0 +1,33 @@
+<div class="l12 s12 m7 card-float">
+  <div class="card card-calendar">
+    <div class="card-content">
+      <h5 class="col l12 s12 card-float-title">Select the dates to stay in Charlotte</h5>
+      <div class="col l6 s12">
+        <form>
+          <div>
+            <label for="date-begin">CHECK-IN</label>
+            <input type="text" id="date-begin" class="date-begin form-input" disabled>
+          </div>
+          <div>
+            <label for="date-end">CHECK-OUT</label>
+            <input type="text" id="date-end" class="date-end form-input" disabled>
+          </div>
+          <button class="btn waves-effect waves-light" type="submit" {{action 'getHotels'}} name="action">Search Hotels</button>
+        </form>
+      </div>
+      <div class="col l6 s12">
+          <div class="card-stacked">
+            {{#power-calendar-range
+            center=center
+            selected=range
+            onCenterChange=(action (mut center) value="date")
+            onSelect=(action (mut range)  value="date") as |calendar|}}
+            {{calendar.nav}}
+            {{calendar.days}}
+          {{/power-calendar-range}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{{selectedDates}}

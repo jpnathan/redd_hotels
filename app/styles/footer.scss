@@ -1,0 +1,25 @@
+@import 'variables';
+
+.page-footer {
+  border-top: .100em solid;
+  border-color: $grey;
+  background-color: $white;
+}
+
+.social-icons {
+  width: 2em;
+  height: 2em;
+  margin: 0 .5em;
+}
+
+.page-footer .footer-copyright {
+  font-size: .8rem;
+  color: $grey;
+  justify-content: center;
+  background-color: $white;
+}
+
+.footer-icones {
+  display: flex;
+  justify-content: center;
+}

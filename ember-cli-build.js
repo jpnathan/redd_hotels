@@ -21,5 +21,9 @@ module.exports = function(defaults) {
   // please specify an object with the list of modules as keys
   // along with the exports of each module as its value.
 
+  // app.import('bower_components/materialize/dist/js/materialize.js');
+  // app.import('bower_components/materialize/dist/css/materialize.css');
+  app.import('bower_components/moment/moment.js');
+  
   return app.toTree();
 };

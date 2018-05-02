@@ -1,0 +1,29 @@
+<div class="header">
+  <div class="row">
+    <div class="nav">
+      <ul id="nav-mobile" class="left">
+          <a href="#">The queen city</a>
+          <a href="#">My reservations</a>
+          <a href="#">Guide</a>
+      </ul>
+    </div>
+  </div>
+    <div class="header-title">
+      <div>
+        <img class="header-coroa" src="../../../images/crown.svg" alt="Coroa">
+        <h6>WELCOME TO</h6>
+        <h1> CHARLOTTE</h1>
+        <h5>THE QUEEN CITY</h5>
+      </div>
+    </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="calendar">
+      {{calendar-widget resultHotels=(route-action 'resultHotels')}}
+    </div>
+  </div>
+</div>
+
+{{outlet}}
