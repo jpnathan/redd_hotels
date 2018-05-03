@@ -1,4 +1,4 @@
-<h5 class="result-hotels-title">Best choice between {data start} and {date end}</h5>
+<h5 class="result-hotels-title">Best choice between {{model.params.s}} and {{model.params.e}}</h5>
 
 <div class="col l12 s12 result-hotels">
   <aside class="result-filters">
@@ -25,31 +25,31 @@
       <form action="#">
         <p>
           <label>
-            <input id="one-star" type="checkbox" />
+            <input id="one-star" type="checkbox" checked={{oneStar}} onchange={{action 'toggleOneStar'}}/>
             <span> <img src="../../../images/one-star.svg" alt=""></span>
           </label>
         </p>
         <p>
           <label>
-            <input id="two-star" type="checkbox" />
+            <input id="two-star" type="checkbox" checked={{twoStar}} onchange={{action 'toggleTwoStar'}}/>
             <span> <img src="../../../images/two-star.svg" alt=""></span>
           </label>
         </p>
         <p>
           <label>
-            <input id="three-star" type="checkbox" />
+            <input id="three-star" type="checkbox" checked={{threeStar}} onchange={{action 'toggleThreeStar'}}/>
             <span> <img src="../../../images/three-star.svg" alt=""></span>
           </label>
         </p>
         <p>
           <label>
-            <input id="four-star" type="checkbox" />
+            <input id="four-star" type="checkbox" checked={{fourStar}} onchange={{action 'toggleFourStar'}}/>
             <span> <img src="../../../images/four-star.svg" alt=""></span>
           </label>
         </p>
         <p>
           <label>
-            <input id="five-star" type="checkbox" />
+            <input id="five-star" type="checkbox" checked={{fiveStar}} onchange={{action 'toggleFiveStar'}}/>
             <span> <img src="../../../images/five-star.svg" alt=""></span>
           </label>
         </p>
@@ -58,41 +58,26 @@
   </aside>
 
   <div class="col l12 s12 result-hotels-card">
-    <div class="card horizontal">
-      <div class="card-image col l4 s12 m7">
-        <img src="../../../images/hotel.png" alt="Fachada Hotel">
+    {{#each filteredHotels as |hotel|}}
+      <div class="card horizontal">
+        <div class="card-image col l4 s12 m7">
+          <img src={{hotel.image}} alt="Fachada Hotel">
+        </div>
+        <div class="card-content card-price col l6">
+          <span> {{star-rating hotel.rate readOnly=true fillColor='#F9B349' width=12 heigh=12}} </span>
+          <p class="hotel-title">{{hotel.name}}</p>
+          <p class="hotel-description">{{hotel.description}}</p>
+          <button class="btn waves-effect waves-light" type="submit" name="action">Book now</button>
+          <button class="btn waves-effect waves-light button" type="submit" name="action">Price history</button>
+        </div>
+        <div class="card-action col l3 s12">
+          <p class="total-nights">Total <b> {{hotel.totalNights}} nights</b></p>
+          <p class="total-price">${{hotel.totalPrice}}</p>
+          <p class="per-night">Per night</p>
+          <p class="price-night">${{hotel.price}}</p>
+        </div>
       </div>
-      <div class="card-content card-price col l6">
-        <svg width="48" height="13" viewBox="0 0 48 13" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-          <g id="Canvas" fill="none">
-            <g id="stars">
-              <g id="Star">
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M 6.65776 9.98664L 2.74443 12.044L 3.49181 7.68644L 0.325854 4.6004L 4.70109 3.96464L 6.65776 0L 8.61443 3.96464L 12.9897 4.6004L 9.82371 7.68644L 10.5711 12.044L 6.65776 9.98664Z"
-                  transform="translate(0.637207 0.456421)" fill="#F9B349" />
-              </g>
-              <g id="Star Copy">
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M 6.65776 9.98664L 2.74443 12.044L 3.49181 7.68644L 0.325854 4.6004L 4.70109 3.96464L 6.65776 0L 8.61443 3.96464L 12.9897 4.6004L 9.82371 7.68644L 10.5711 12.044L 6.65776 9.98664Z"
-                  transform="translate(17.6367 0.456421)" fill="#F9B349" />
-              </g>
-              <g id="Star Copy 2">
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M 6.65776 9.98664L 2.74443 12.044L 3.49181 7.68644L 0.325854 4.6004L 4.70109 3.96464L 6.65776 0L 8.61443 3.96464L 12.9897 4.6004L 9.82371 7.68644L 10.5711 12.044L 6.65776 9.98664Z"
-                  transform="translate(34.6367 0.456421)" fill="#F9B349" />
-              </g>
-            </g>
-          </g>
-        </svg>
-        <p class="hotel-title">HYATT PLACE CHARLOTTE AIRPORT / LAKE POINTE</p>
-        <p class="hotel-description">This hotel is located 7 miles from downtown Charlotte and 5 miles from Charlotte Douglas International Airport.</p>
-        <button class="btn waves-effect waves-light" type="submit" name="action">Book now</button>
-        <button class="btn waves-effect waves-light button" type="submit" name="action">Price history</button>
-      </div>
-      <div class="card-action col l3 s12">
-        <p class="total-nights">Total <b> 8 nights</b></p>
-        <p class="total-price">$670</p>
-        <p class="per-night">Per night</p>
-        <p class="price-night">$670</p>
-      </div>
-    </div>
+    {{/each}}
   </div>
 </div>
 

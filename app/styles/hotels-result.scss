@@ -39,7 +39,7 @@
   width: 100%;
   
   img {
-    margin: 0;
+    margin: 20px;
   }
 }
 
@@ -67,7 +67,8 @@
 .hotel-title {
   font-family: 'Heebo', sans-serif;
   font-weight: bold;  
-  font-size: 1.2rem;
+  font-size: .9rem;
+  letter-spacing: 2px;
   padding-top: 10px;
   color: $orange;
 }
@@ -164,6 +165,7 @@
   font-size: 1.2rem;
   font-weight: bold;
   margin-bottom: 2em;
+  letter-spacing: 3px;
 }
 
 .filter-subtitle {

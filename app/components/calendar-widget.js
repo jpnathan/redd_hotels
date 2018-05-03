@@ -18,7 +18,7 @@ export default Component.extend({
   actions: {
     getHotels(){
       if ($('.date-begin').val() && $('.date-end').val()) {
-        this.get('resultHotels')();
+        this.get('resultHotels')($('.date-begin').val(), $('.date-end').val());
       }
     }
   }
