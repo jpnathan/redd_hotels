@@ -47,23 +47,30 @@
 }
 
 .ember-power-calendar .ember-power-calendar-day--selected, .ember-power-calendar .ember-power-calendar-day--selected:not([disabled]):hover {
-  background-color: #c9e9ff;
-  color: #656D78;
+  background-color: $green;
+  color: $white;
+  border-radius: 20px;
+
 }
 
 .btn:hover, .btn-large:hover {
-  background-color: #eb7c00;
-  color: $white
+  background-color: $orange;
+  color: $white; 
+}
+
+.btn:focus {
+  background-color: $orange;
+  color: $white;   
 }
 
 .btn {
   border: 1px solid;
   border-radius: 22px;
-  border-color: #eb7c00;
+  border-color: $orange;
   background: transparent;
   font-size: 12px;
   font-weight: bold;
-  color: #eb7c00;
+  color: $orange;
   text-transform: capitalize;
 }
 

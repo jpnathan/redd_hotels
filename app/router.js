@@ -8,7 +8,7 @@ const Router = EmberRouter.extend({
 
 Router.map(function() {
   this.route('calendar', { path: '/' }, function() {
-    this.route('calendar-result');
+    this.route('calendar-result', { path: 'hotels' });
   });
 });
 

@@ -11,8 +11,8 @@ export default Component.extend({
   },
 
   selectedDates: computed('range', function() {
-    $('.date-begin').val(moment(this.get('range.start')).format('DD/MM/YYYY'))
-    $('.date-end').val(moment(this.get('range.end')).format('DD/MM/YYYY'))
+    $('.date-begin').val(moment(this.get('range.start')).format('MMMM D, YYYY'))
+    $('.date-end').val(moment(this.get('range.end')).format('MMMM D, YYYY'))
   }),
 
   actions: {

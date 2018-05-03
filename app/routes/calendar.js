@@ -4,7 +4,7 @@ export default Route.extend({
 
   actions: {
     resultHotels(){
-      this.transitionTo('calendar-result');
+      this.transitionTo('calendar.calendar-result');
     }
   }
 });
